@@ -88,18 +88,25 @@ export class App extends Component {
 
     return (
       <div className={css.App}>
-        {showModal && (
-          <Modal
-            onCloseModal={this.toggleModal}
-            children={<img src={foto} alt="" />}
-          />
-        )}
         <Searchbar handleSubmit={this.handleSubmit} />
         <ImageGallery fotos={fotos} openModal={this.OpenModal} />
         {isLoading && <Loader />}
         {showBtn && <Button onClick={this.addPageGallery} />}
         {isEmply && <NoFotos />}
         {error && <Error error={error} />}
+        {showModal && (
+          <Modal
+            onCloseModal={this.toggleModal}
+            children={
+              <img
+                className={css.Image}
+                src={foto}
+                alt={foto}
+                style={{ width: '1000' }}
+              />
+            }
+          />
+        )}
       </div>
     );
   }
