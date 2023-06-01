@@ -20,6 +20,7 @@ export class App extends Component {
     error: '',
     isEmply: false,
     showModal: false,
+    foto: '',
   };
   async componentDidUpdate(_, predState) {
     const { search, page, per_page } = this.state;
@@ -65,7 +66,9 @@ export class App extends Component {
       error: '',
     });
   };
-  OpenModal = () => {
+  OpenModal = foto => {
+    console.log('OpenModal', foto);
+    this.setState({ foto: foto });
     this.toggleModal();
   };
   render() {
@@ -78,15 +81,21 @@ export class App extends Component {
       error,
       isLoading,
       showModal,
+      foto,
     } = this.state;
 
     const showBtn = page < Math.ceil(totalHits / per_page);
 
     return (
       <div className={css.App}>
-        {showModal && <Modal onCloseModal={this.toggleModal} />}
+        {showModal && (
+          <Modal
+            onCloseModal={this.toggleModal}
+            children={<img src={foto} alt="" />}
+          />
+        )}
         <Searchbar handleSubmit={this.handleSubmit} />
-        <ImageGallery fotos={fotos} />
+        <ImageGallery fotos={fotos} openModal={this.OpenModal} />
         {isLoading && <Loader />}
         {showBtn && <Button onClick={this.addPageGallery} />}
         {isEmply && <NoFotos />}

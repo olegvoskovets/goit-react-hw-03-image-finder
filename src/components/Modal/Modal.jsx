@@ -33,16 +33,15 @@ export class Modal extends Component {
   render() {
     return createPortal(
       <div className={css.Modal_backdroup} onClick={this.handleBackdrop}>
-        <div className={css.Modal_contant}>
-          <button
-            type="button"
-            className={css.closeBtn}
-            onClick={this.closeModal}
-          >
-            X
-          </button>
-          {this.props.children}
-        </div>
+        <button
+          type="button"
+          className={css.closeBtn}
+          onClick={this.closeModal}
+        >
+          X
+        </button>
+        {/* <img src="" alt="" /> */}
+        <div className={css.Modal_contant}>{this.props.children}</div>
       </div>,
       modalRoot
     );
