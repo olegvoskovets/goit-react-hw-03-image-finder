@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/olegvoskovets/goit-react-hw-03-image-finde/static/css/main.bcb16c26.css",
-    "main.js": "/olegvoskovets/goit-react-hw-03-image-finde/static/js/main.2c4f686c.js",
+    "main.css": "/olegvoskovets/goit-react-hw-03-image-finde/static/css/main.79f574cc.css",
+    "main.js": "/olegvoskovets/goit-react-hw-03-image-finde/static/js/main.e3f15e49.js",
     "index.html": "/olegvoskovets/goit-react-hw-03-image-finde/index.html",
-    "main.bcb16c26.css.map": "/olegvoskovets/goit-react-hw-03-image-finde/static/css/main.bcb16c26.css.map",
-    "main.2c4f686c.js.map": "/olegvoskovets/goit-react-hw-03-image-finde/static/js/main.2c4f686c.js.map"
+    "main.79f574cc.css.map": "/olegvoskovets/goit-react-hw-03-image-finde/static/css/main.79f574cc.css.map",
+    "main.e3f15e49.js.map": "/olegvoskovets/goit-react-hw-03-image-finde/static/js/main.e3f15e49.js.map"
   },
   "entrypoints": [
-    "static/css/main.bcb16c26.css",
-    "static/js/main.2c4f686c.js"
+    "static/css/main.79f574cc.css",
+    "static/js/main.e3f15e49.js"
   ]
 }
