@@ -19,6 +19,7 @@ export class App extends Component {
     isLoading: false,
     error: '',
     isEmply: false,
+    showModal: false,
   };
   async componentDidUpdate(_, predState) {
     const { search, page, per_page } = this.state;
@@ -43,6 +44,11 @@ export class App extends Component {
       }
     }
   }
+  toggleModal = () => {
+    this.setState(prevState => ({
+      showModal: !prevState.showModal,
+    }));
+  };
   addPageGallery = () => {
     this.setState(prevState => ({
       page: prevState.page + 1,
@@ -57,17 +63,28 @@ export class App extends Component {
       fotos: [],
       totalHits: 0,
       error: '',
-      
     });
   };
+  OpenModal = () => {
+    this.toggleModal();
+  };
   render() {
-    const { fotos, totalHits, per_page, page, isEmply, error, isLoading } =
-      this.state;
+    const {
+      fotos,
+      totalHits,
+      per_page,
+      page,
+      isEmply,
+      error,
+      isLoading,
+      showModal,
+    } = this.state;
+
     const showBtn = page < Math.ceil(totalHits / per_page);
 
     return (
       <div className={css.App}>
-        <Modal />
+        {showModal && <Modal onCloseModal={this.toggleModal} />}
         <Searchbar handleSubmit={this.handleSubmit} />
         <ImageGallery fotos={fotos} />
         {isLoading && <Loader />}
